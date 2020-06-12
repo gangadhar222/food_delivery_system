@@ -1,0 +1,34 @@
+[
+    {
+        "name": "The Only Place",
+        "rating": 4.3,
+        "Address": "13, Museum Road, Behind Post Office, Bengaluru",
+        "Menu": [
+            {
+                "item": "Chicken Biryani",
+                "price": 300,
+                "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcReWi_qjBzQ1tCvlrAbRKdc262GoewHbruxbCkyyrkh4uzDeRTj&usqp=CAU",
+                "category": "Non-veg"
+            },
+            {
+                "item": "Paneer Butter Masala.",
+                "price": 300,
+                "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRrWqumd1XFsdrdfLjdGxZ6TgldH6cu1-rbI2YE9baiSMk5yt1T&usqp=CAU",
+                "category": "Veg"
+            },
+            {
+                "item": "Fresh Corn Soup",
+                "price": 300,
+                "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRqqZbBhUqwSAn0fkkIm3XKoonEIWDai8ZvgHybEbPcKmCz5Oi2&usqp=CAU",
+                "category": "Veg"
+            },
+            {
+                "item": "Dal Makhani",
+                "price": 300,
+                "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRA98nHKUbWJLHCgOv24Jbi85bZ3t_lK6zKEC7VfaEfY0ZlYLwH&usqp=CAU",
+                "category": "Non-veg"
+            }
+        ],
+        "payment": "card"
+    }
+]

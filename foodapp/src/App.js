@@ -1,13 +1,22 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Navbar from './components/Navbar.js'
 
-function App() {
-  return (
-    <div className="App">
-     <h2>Food deliver system</h2>
-    </div>
-  );
+class App extends React.Component {
+      constructor(props) {
+        super(props)
+      
+        this.state = {
+           
+        }
+      }
+      render() {
+        return(
+          <>
+          <Navbar></Navbar>
+          </>
+        )
+      }
+      
 }
 
 export default App;
