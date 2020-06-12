@@ -60,7 +60,6 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-const primary = red[500]
 
 function Navbar() {
     const classes = useStyles();
@@ -74,7 +73,7 @@ function Navbar() {
                                 <img src="https://cdn4.vectorstock.com/i/thumb-large/84/83/restaurant-logo-cooking-menu-symbol-vector-27278483.jpg" style={{width:"75px",height:"75px",padding:"5px"}}></img>
                             </Link>
                         </Typography>
-                        <Typography className={classes.title} variant="h3" align="justify">FoodCheff</Typography>
+                        <Typography className={classes.title} variant="h3" align="justify">FoodCheffs</Typography>
                         <Button>
                            <Typography variant="h6"><Link to="/login">Login</Link></Typography>
                         </Button>
