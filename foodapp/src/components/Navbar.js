@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { Link, Switch, Route, BrowserRouter } from 'react-router-dom'
 import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
@@ -9,6 +9,7 @@ import { Grid } from '@material-ui/core';
 import Login from './Login.js'
 import Signup from './Signup.js'
 import Home from './Home.js'
+import Menu from './Menu.js'
 
 let restaurantArray = [
     {
@@ -390,12 +391,15 @@ function Navbar() {
                 </AppBar>
             </div>
             <Switch>
-                <Route path="/" exact render={props => <Home restaurantArray={restaurantArray}/>} />
+                <Route path="/" exact render={props => <Home restaurantArray={restaurantArray} {...props}/>} />
                 <Route path="/login" component={Login} />
                 <Route path="/signup" component={Signup} />
+                <Route path="/menu" exact component={Menu}></Route>
             </Switch>
         </BrowserRouter>
     )
 }
+
+
 
 export default Navbar;
