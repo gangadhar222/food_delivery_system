@@ -1,6 +1,8 @@
 import React from 'react';
 import Menu from './Menu.js'
-import { Link, Route, BrowserRouter,Switch } from 'react-router-dom'
+import { connect } from 'react-redux'
+import { addItem } from '../redux/actions.js'
+import { Link } from 'react-router-dom'
 import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
@@ -31,10 +33,9 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const RestCard = (props) => {
-    const { url,name } = props
+    const { url, name} = props
     const classes = useStyles();
     return (
-        <BrowserRouter>
             <Grid item xs={3}>
                 <Paper className={classes.paper}>
                     <Card className={classes.root}>
@@ -51,18 +52,24 @@ const RestCard = (props) => {
                             </CardContent>
                         </CardActionArea>
                         <CardActions>
-                            <Button size="small" color="primary">
-                                <Link to='/menu'> Menu</Link>
+                            <Button size="small" color="primary" >
+                                Menu
                             </Button>
                         </CardActions>
                     </Card>
                 </Paper>
             </Grid>
-            <Switch>
-                <Route path="/menu" exact component={Menu}></Route>
-            </Switch>
-        </BrowserRouter>
     );
 }
 
+
 export default RestCard;
+// const mapDispatchToProps = dispatch => ({
+//     x : (payload) => dispatch(addItem(payload))
+//  })
+
+//     export default connect(null, mapDispatchToProps)(Card)
+
+// const mapDispatchToProps = dispatch => ({
+//     selectCity  : (payload) => dispatch(selectCity(payload))
+//  })
