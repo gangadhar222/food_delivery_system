@@ -1,5 +1,6 @@
 import {ADD_TO_CART,REMOVE_FROM_CART} from './actionTypes.js'
-import {addItem} from './actions.js'
+
+
 const initState = {
     cartItems:[],
     restaurantArray : [
@@ -11,18 +12,21 @@ const initState = {
             Menu: [
                 {
                     item: "Chicken Biryani",
+                    id:11,
                     price: 300,
                     img: "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcReWi_qjBzQ1tCvlrAbRKdc262GoewHbruxbCkyyrkh4uzDeRTj&usqp=CAU",
                     category: "Non-veg"
                 },
                 {
                     item: "Paneer Butter Masala.",
+                    id:12,
                     price: 300,
                     img: "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRrWqumd1XFsdrdfLjdGxZ6TgldH6cu1-rbI2YE9baiSMk5yt1T&usqp=CAU",
-                    "category": "Veg"
+                    category: "Veg"
                 },
                 {
                     item: "Fresh Corn Soup",
+                    id:13,
                     price: 300,
                     img: "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRqqZbBhUqwSAn0fkkIm3XKoonEIWDai8ZvgHybEbPcKmCz5Oi2&usqp=CAU",
                     category: "Veg"
@@ -30,6 +34,7 @@ const initState = {
                 {
                     item: "Dal Makhani",
                     price: 300,
+                    id:14,
                     img: "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRA98nHKUbWJLHCgOv24Jbi85bZ3t_lK6zKEC7VfaEfY0ZlYLwH&usqp=CAU",
                     category: "Non-veg"
                 }
@@ -45,6 +50,7 @@ const initState = {
             Menu: [
                 {
                     item: "Chicken Biryani",
+                    id:21,
                     price: 300,
                     img: "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcReWi_qjBzQ1tCvlrAbRKdc262GoewHbruxbCkyyrkh4uzDeRTj&usqp=CAU",
                     category: "Non-veg"
@@ -52,18 +58,21 @@ const initState = {
                 {
                     item: "Paneer Butter Masala.",
                     price: 300,
+                    id:22,
                     img: "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRrWqumd1XFsdrdfLjdGxZ6TgldH6cu1-rbI2YE9baiSMk5yt1T&usqp=CAU",
-                    "category": "Veg"
+                    category: "Veg"
                 },
                 {
                     item: "Fresh Corn Soup",
                     price: 300,
+                    id:23,
                     img: "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRqqZbBhUqwSAn0fkkIm3XKoonEIWDai8ZvgHybEbPcKmCz5Oi2&usqp=CAU",
                     category: "Veg"
                 },
                 {
                     item: "Dal Makhani",
                     price: 300,
+                    id:24,
                     img: "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRA98nHKUbWJLHCgOv24Jbi85bZ3t_lK6zKEC7VfaEfY0ZlYLwH&usqp=CAU",
                     category: "Non-veg"
                 }
@@ -80,24 +89,28 @@ const initState = {
                 {
                     item: "Chicken Biryani",
                     price: 300,
+                    id:31,
                     img: "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcReWi_qjBzQ1tCvlrAbRKdc262GoewHbruxbCkyyrkh4uzDeRTj&usqp=CAU",
                     category: "Non-veg"
                 },
                 {
                     item: "Paneer Butter Masala.",
                     price: 300,
+                    id:32,
                     img: "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRrWqumd1XFsdrdfLjdGxZ6TgldH6cu1-rbI2YE9baiSMk5yt1T&usqp=CAU",
-                    "category": "Veg"
+                    category: "Veg"
                 },
                 {
                     item: "Fresh Corn Soup",
                     price: 300,
+                    id:33,
                     img: "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRqqZbBhUqwSAn0fkkIm3XKoonEIWDai8ZvgHybEbPcKmCz5Oi2&usqp=CAU",
                     category: "Veg"
                 },
                 {
                     item: "Dal Makhani",
                     price: 300,
+                    id:34,
                     img: "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRA98nHKUbWJLHCgOv24Jbi85bZ3t_lK6zKEC7VfaEfY0ZlYLwH&usqp=CAU",
                     category: "Non-veg"
                 }
@@ -114,24 +127,28 @@ const initState = {
                 {
                     item: "Chicken Biryani",
                     price: 300,
+                    id:41,
                     img: "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcReWi_qjBzQ1tCvlrAbRKdc262GoewHbruxbCkyyrkh4uzDeRTj&usqp=CAU",
                     category: "Non-veg"
                 },
                 {
                     item: "Paneer Butter Masala.",
                     price: 300,
+                    id:42,
                     img: "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRrWqumd1XFsdrdfLjdGxZ6TgldH6cu1-rbI2YE9baiSMk5yt1T&usqp=CAU",
-                    "category": "Veg"
+                    category: "Veg"
                 },
                 {
                     item: "Fresh Corn Soup",
                     price: 300,
+                    id:43,
                     img: "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRqqZbBhUqwSAn0fkkIm3XKoonEIWDai8ZvgHybEbPcKmCz5Oi2&usqp=CAU",
                     category: "Veg"
                 },
                 {
                     item: "Dal Makhani",
                     price: 300,
+                    id:44,
                     img: "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRA98nHKUbWJLHCgOv24Jbi85bZ3t_lK6zKEC7VfaEfY0ZlYLwH&usqp=CAU",
                     category: "Non-veg"
                 }
@@ -148,24 +165,28 @@ const initState = {
                 {
                     item: "Chicken Biryani",
                     price: 300,
+                    id:51,
                     img: "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcReWi_qjBzQ1tCvlrAbRKdc262GoewHbruxbCkyyrkh4uzDeRTj&usqp=CAU",
                     category: "Non-veg"
                 },
                 {
                     item: "Paneer Butter Masala.",
                     price: 300,
+                    id:52,
                     img: "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRrWqumd1XFsdrdfLjdGxZ6TgldH6cu1-rbI2YE9baiSMk5yt1T&usqp=CAU",
-                    "category": "Veg"
+                    category: "Veg"
                 },
                 {
                     item: "Fresh Corn Soup",
                     price: 300,
+                    id:53,
                     img: "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRqqZbBhUqwSAn0fkkIm3XKoonEIWDai8ZvgHybEbPcKmCz5Oi2&usqp=CAU",
                     category: "Veg"
                 },
                 {
                     item: "Dal Makhani",
                     price: 300,
+                    id:54,
                     img: "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRA98nHKUbWJLHCgOv24Jbi85bZ3t_lK6zKEC7VfaEfY0ZlYLwH&usqp=CAU",
                     category: "Non-veg"
                 }
@@ -182,24 +203,28 @@ const initState = {
                 {
                     item: "Chicken Biryani",
                     price: 300,
+                    id:61,
                     img: "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcReWi_qjBzQ1tCvlrAbRKdc262GoewHbruxbCkyyrkh4uzDeRTj&usqp=CAU",
                     category: "Non-veg"
                 },
                 {
                     item: "Paneer Butter Masala.",
                     price: 300,
+                    id:62,
                     img: "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRrWqumd1XFsdrdfLjdGxZ6TgldH6cu1-rbI2YE9baiSMk5yt1T&usqp=CAU",
-                    "category": "Veg"
+                    category: "Veg"
                 },
                 {
                     item: "Fresh Corn Soup",
                     price: 300,
+                    id:63,
                     img: "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRqqZbBhUqwSAn0fkkIm3XKoonEIWDai8ZvgHybEbPcKmCz5Oi2&usqp=CAU",
                     category: "Veg"
                 },
                 {
                     item: "Dal Makhani",
                     price: 300,
+                    id:64,
                     img: "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRA98nHKUbWJLHCgOv24Jbi85bZ3t_lK6zKEC7VfaEfY0ZlYLwH&usqp=CAU",
                     category: "Non-veg"
                 }
@@ -216,24 +241,28 @@ const initState = {
                 {
                     item: "Chicken Biryani",
                     price: 300,
+                    id:71,
                     img: "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcReWi_qjBzQ1tCvlrAbRKdc262GoewHbruxbCkyyrkh4uzDeRTj&usqp=CAU",
                     category: "Non-veg"
                 },
                 {
                     item: "Paneer Butter Masala.",
                     price: 300,
+                    id:72,
                     img: "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRrWqumd1XFsdrdfLjdGxZ6TgldH6cu1-rbI2YE9baiSMk5yt1T&usqp=CAU",
                     "category": "Veg"
                 },
                 {
                     item: "Fresh Corn Soup",
                     price: 300,
+                    id:73,
                     img: "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRqqZbBhUqwSAn0fkkIm3XKoonEIWDai8ZvgHybEbPcKmCz5Oi2&usqp=CAU",
                     category: "Veg"
                 },
                 {
                     item: "Dal Makhani",
                     price: 300,
+                    id:74,
                     img: "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRA98nHKUbWJLHCgOv24Jbi85bZ3t_lK6zKEC7VfaEfY0ZlYLwH&usqp=CAU",
                     category: "Non-veg"
                 }
@@ -250,24 +279,28 @@ const initState = {
                 {
                     item: "Chicken Biryani",
                     price: 300,
+                    id:81,
                     img: "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcReWi_qjBzQ1tCvlrAbRKdc262GoewHbruxbCkyyrkh4uzDeRTj&usqp=CAU",
                     category: "Non-veg"
                 },
                 {
                     item: "Paneer Butter Masala.",
                     price: 300,
+                    id:82,
                     img: "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRrWqumd1XFsdrdfLjdGxZ6TgldH6cu1-rbI2YE9baiSMk5yt1T&usqp=CAU",
-                    "category": "Veg"
+                    category: "Veg"
                 },
                 {
                     item: "Fresh Corn Soup",
                     price: 300,
+                    id:83,
                     img: "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRqqZbBhUqwSAn0fkkIm3XKoonEIWDai8ZvgHybEbPcKmCz5Oi2&usqp=CAU",
                     category: "Veg"
                 },
                 {
                     item: "Dal Makhani",
                     price: 300,
+                    id:84,
                     img: "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRA98nHKUbWJLHCgOv24Jbi85bZ3t_lK6zKEC7VfaEfY0ZlYLwH&usqp=CAU",
                     category: "Non-veg"
                 }
@@ -284,24 +317,28 @@ const initState = {
                 {
                     item: "Chicken Biryani",
                     price: 300,
+                    id:91,
                     img: "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcReWi_qjBzQ1tCvlrAbRKdc262GoewHbruxbCkyyrkh4uzDeRTj&usqp=CAU",
                     category: "Non-veg"
                 },
                 {
                     item: "Paneer Butter Masala.",
                     price: 300,
+                    id:92,
                     img: "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRrWqumd1XFsdrdfLjdGxZ6TgldH6cu1-rbI2YE9baiSMk5yt1T&usqp=CAU",
-                    "category": "Veg"
+                    category: "Veg"
                 },
                 {
                     item: "Fresh Corn Soup",
                     price: 300,
+                    id:93,
                     img: "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRqqZbBhUqwSAn0fkkIm3XKoonEIWDai8ZvgHybEbPcKmCz5Oi2&usqp=CAU",
                     category: "Veg"
                 },
                 {
                     item: "Dal Makhani",
                     price: 300,
+                    id:94,
                     img: "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRA98nHKUbWJLHCgOv24Jbi85bZ3t_lK6zKEC7VfaEfY0ZlYLwH&usqp=CAU",
                     category: "Non-veg"
                 }
@@ -318,24 +355,28 @@ const initState = {
                 {
                     item: "Chicken Biryani",
                     price: 300,
+                    id:101,
                     img: "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcReWi_qjBzQ1tCvlrAbRKdc262GoewHbruxbCkyyrkh4uzDeRTj&usqp=CAU",
                     category: "Non-veg"
                 },
                 {
                     item: "Paneer Butter Masala.",
                     price: 300,
+                    id:102,
                     img: "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRrWqumd1XFsdrdfLjdGxZ6TgldH6cu1-rbI2YE9baiSMk5yt1T&usqp=CAU",
-                    "category": "Veg"
+                    category: "Veg"
                 },
                 {
                     item: "Fresh Corn Soup",
                     price: 300,
+                    id:103,
                     img: "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRqqZbBhUqwSAn0fkkIm3XKoonEIWDai8ZvgHybEbPcKmCz5Oi2&usqp=CAU",
                     category: "Veg"
                 },
                 {
                     item: "Dal Makhani",
                     price: 300,
+                    id:104,
                     img: "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRA98nHKUbWJLHCgOv24Jbi85bZ3t_lK6zKEC7VfaEfY0ZlYLwH&usqp=CAU",
                     category: "Non-veg"
                 }
@@ -350,6 +391,7 @@ const reducer = (state=initState, {type,payload}) =>{
     console.log(payload)
     switch(type){
         case ADD_TO_CART:
+            console.log(payload)
             return {...state}
         case REMOVE_FROM_CART:
             return {...state}

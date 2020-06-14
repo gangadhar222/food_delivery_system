@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import Routes from './Routes.js'
 export class Login extends Component {
     constructor(props) {
         super(props)
@@ -25,7 +24,7 @@ export class Login extends Component {
     };
 
     render() {
-        console.log(this.state.users)
+        console.log(this.props)
         return (
             <>
                 <h1 className="text-center p-3">Login</h1>
