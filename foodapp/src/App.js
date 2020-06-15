@@ -14,7 +14,6 @@ class App extends React.Component {
     }
   }
   render() {
-    console.log(store.getState())
     return (
       <BrowserRouter>
         <Provider store={store}>

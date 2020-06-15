@@ -1,5 +1,7 @@
 import React from 'react';
-import { Link, Route, BrowserRouter } from 'react-router-dom'
+import { Link } from 'react-router-dom'
+import { connect } from 'react-redux'
+import { addItem } from '../redux/actions.js'
 import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
@@ -30,8 +32,8 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const MenuList = (props) => {
-    const { url, name } = props
-    console.log(url, name)
+    const { url, name, price, id, match } = props
+    console.log(addItem)
     const classes = useStyles();
     return (
         <Grid item xs={3}>
@@ -41,7 +43,6 @@ const MenuList = (props) => {
                         <CardMedia
                             className={classes.media}
                             image={url}
-                            title="Contemplative Reptile"
                         />
                         <CardContent>
                             <Typography gutterBottom variant="h5" component="h2">
@@ -50,9 +51,12 @@ const MenuList = (props) => {
                         </CardContent>
                     </CardActionArea>
                     <CardActions>
-                        <Button size="small" color="primary">
-                            Add to cart
+                        {/* <Link to={`${match.url}/${id}`}> */}
+                            <Button size="small" color="primary" id={id} onClick={(id) => addItem(id)}>
+                                Add to cart
                             </Button>
+                        {/* </Link> */}
+                        <div>Price: {price}</div>
                     </CardActions>
                 </Card>
             </Paper>
@@ -61,4 +65,10 @@ const MenuList = (props) => {
     );
 }
 
-export default MenuList;
+const mapDispatchToProps = dispatch => {
+    return {
+        addItem: (id) => dispatch(addItem(id))
+    }
+}
+
+export default connect(mapDispatchToProps)(MenuList)

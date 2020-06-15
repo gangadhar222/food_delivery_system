@@ -21,7 +21,6 @@ const useStyles = makeStyles((theme) => ({
 
 export function Navbar({restaurantArray}) {
     const classes = useStyles();
-    console.log(restaurantArray)
     return (
 
        
@@ -39,6 +38,9 @@ export function Navbar({restaurantArray}) {
                         </Button>
                         <Button>
                             <Typography variant="h6">  <Link to="/signup">Signup</Link></Typography>
+                        </Button>
+                        <Button>
+                            <Typography variant="h6">  <Link to="/cart">Cart</Link></Typography>
                         </Button>
                     </Toolbar>
                 </AppBar>

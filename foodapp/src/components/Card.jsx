@@ -51,7 +51,7 @@ const RestCard = (props) => {
                         </CardContent>
                     </CardActionArea>
                     <CardActions>
-                        <Link to={`/${id}`}><Button size="small" color="primary" >
+                        <Link to={`${match.url}${id}`}><Button size="small" color="primary" >
                             Menu
                             </Button>
                         </Link>
