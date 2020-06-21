@@ -390,8 +390,20 @@ const initState = {
 const reducer = (state=initState, {type,payload}) =>{
     switch(type){
         case ADD_TO_CART:
-            console.log(payload)
-            return {...state}
+            console.log('cart',state.cartItems)
+            let id = payload.id.toString().split('').map(Number)[0]
+            let restaurant = state.restaurantArray.find(item=>item.id === id)
+            let item = restaurant.Menu.find(item=>item.id===payload.id)
+            let cartItem = {
+                name: item.item,
+                price: item.price,
+                quantity:1,
+                id:payload.id
+            }
+            return {
+                ...state,
+                cartItems:[...state.cartItems,cartItem]
+            }
         case REMOVE_FROM_CART:
             return {...state}
         default:

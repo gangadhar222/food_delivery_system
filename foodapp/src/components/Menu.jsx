@@ -18,5 +18,4 @@ function Menu(props) {
 const mapStateToProps = state =>({
     restaurantArray:state.restaurantArray
 })
-
 export default connect(mapStateToProps)(Menu)

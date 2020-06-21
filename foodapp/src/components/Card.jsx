@@ -64,7 +64,7 @@ const RestCard = (props) => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        addItem: (id) => dispatch(addItem(id))
+        addItem: props=> dispatch(addItem(props))
     }
 }
 

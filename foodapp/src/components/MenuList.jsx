@@ -30,10 +30,9 @@ const useStyles = makeStyles((theme) => ({
         color: theme.palette.text.secondary,
     }
 }));
-
 const MenuList = (props) => {
+    const {addItem} = props
     const { url, name, price, id, match } = props
-    console.log(addItem)
     const classes = useStyles();
     return (
         <Grid item xs={3}>
@@ -52,7 +51,7 @@ const MenuList = (props) => {
                     </CardActionArea>
                     <CardActions>
                         {/* <Link to={`${match.url}/${id}`}> */}
-                            <Button size="small" color="primary" id={id} onClick={(id) => addItem(id)}>
+                            <Button size="small" color="primary" id={id} onClick={() => addItem({id})}>
                                 Add to cart
                             </Button>
                         {/* </Link> */}
@@ -65,10 +64,17 @@ const MenuList = (props) => {
     );
 }
 
-const mapDispatchToProps = dispatch => {
+const mapStateToProps = state => {
     return {
-        addItem: (id) => dispatch(addItem(id))
+        arr: state.cartItems
     }
 }
 
-export default connect(mapDispatchToProps)(MenuList)
+const mapDispatchToProps = dispatch => {
+    return {
+        addItem: props=> dispatch(addItem(props))
+    }
+}
+
+
+export default connect(mapStateToProps,mapDispatchToProps)(MenuList)
