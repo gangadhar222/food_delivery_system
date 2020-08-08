@@ -1,4 +1,4 @@
-import { ADD_TO_CART, REMOVE_FROM_CART, LOG_IN, SIGN_UP, REGISTER } from './actionTypes.js'
+import { ADD_TO_CART, REMOVE_FROM_CART, LOG_IN, SIGN_UP} from './actionTypes.js'
 import {saveData,loadData} from './localStorage.js'
 
 const initState = {
@@ -387,11 +387,13 @@ const initState = {
         }
     ],
     userCheck: false,
-    registered:false
+    registered:false,
+    userExist:false,
+    wrongDetails:false,
+    presentUser:''
 }
 
 const reducer = (state = initState, { type, payload }) => {
-    console.log(state.registeredUsers)
     switch (type) {
         case ADD_TO_CART:
             let id = payload.id.toString().split('').map(Number)[0]
@@ -410,8 +412,19 @@ const reducer = (state = initState, { type, payload }) => {
         case REMOVE_FROM_CART:
             return { ...state }
         case LOG_IN:
-            console.log(payload)
-            return { ...state }
+            let loggedIn = state.registeredUsers.find(user=>user.name == payload.name && user.password == payload.password)
+            if(loggedIn!==undefined){
+                return {
+                    ...state,
+                    userExist:true,
+                    presentUser:loggedIn.name
+                }
+            }   
+            return {
+                 ...state,
+                 userExist:false,
+                 wrongDetails:true
+                 }
         case SIGN_UP:
             let user = state.registeredUsers.find(item => item.name === payload.name)
             if (user === undefined) {

@@ -20,9 +20,10 @@ export class Login extends Component {
     }
 
     render() {
-        const { login,auth } = this.props;
-        console.log(auth)
-        console.log(this.props)
+        const { login,wrongDetails,userExist} = this.props;
+        if(userExist){
+            return <Redirect to="/" />
+        }
         return (
             <div className="container mt-5">
                 <h3 className="text-center">Login</h3>
@@ -36,6 +37,10 @@ export class Login extends Component {
                         <input onChange={this.handleChange} name="password" type="password" className="form-control" />
                     </div>
                 </div>
+                <br/>
+                {
+                    wrongDetails ? <small>Entered wrong username or password</small>:<></>
+                }
                 <button onClick={() => login({
                     name: this.state.name,
                     password: this.state.password,
@@ -46,8 +51,8 @@ export class Login extends Component {
 }
 
 const mapStateToProps = state=>({
-    auth: state.auth,
-    adminAuth: state.adminAuth
+        userExist:state.userExist,
+        wrongDetails:state.wrongDetails
 })
 
 const mapDispatchToProps = dispatch => {
@@ -55,4 +60,4 @@ const mapDispatchToProps = dispatch => {
         login: (payload) => dispatch(login(payload))
     }
 }
-export default connect(null, mapDispatchToProps)(Login);
+export default connect(mapStateToProps, mapDispatchToProps)(Login);
