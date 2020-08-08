@@ -1,4 +1,7 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { signUp } from '../redux/actions.js';
+import { Redirect } from 'react-router-dom';
 
 export class Signup extends Component {
     constructor(props) {
@@ -7,35 +10,25 @@ export class Signup extends Component {
         this.state = {
             name: '',
             mobile: '',
-            password: '',
-            users: []
+            password: ''
         }
-        this.handleChange = this.handleChange.bind(this);
-        this.handleSubmit = this.handleSubmit.bind(this);
     }
 
-
-    handleSubmit = e => {
-        e.preventDefault();
-        this.setState({
-            users:[{...this.state.users},{name:this.state.name,mobile:this.state.mobile,password:this.state.password}]
-        })
-        console.log(this.state.users)
-    };
-
-
-    handleChange = e => {
+    handleChange = (e) => {
         this.setState({
             [e.target.name]: e.target.value
         });
     };
 
     render() {
-        console.log(this.state.users)
+        const { signUp,userCheck,registered} = this.props;
+        if(registered){
+            return <Redirect to="/login" />
+        }
         return (
             <>
                 <h1 className="text-center p-3">Signup</h1>
-                <form className="container">
+                <div className="container">
                     <div className="form-group">
                         <label>Name</label>
                         <input
@@ -44,6 +37,10 @@ export class Signup extends Component {
                             className="form-control"
                             onChange={this.handleChange}
                         />
+                       {
+                           userCheck ? <small style={{color:'red'}}>Username already taken</small>:<small></small>
+                       }
+                       <br/>
                         <label>Mobile</label>
                         <input
                             type="number"
@@ -51,6 +48,7 @@ export class Signup extends Component {
                             className="form-control"
                             onChange={this.handleChange}
                         />
+                        <br/>
                         <label>Password</label>
                         <input
                             type="password"
@@ -58,16 +56,36 @@ export class Signup extends Component {
                             className="form-control"
                             onChange={this.handleChange}
                         />
+                        <br/>
                         <button
-                            type="submit"
                             className="btn btn-primary p-2 m-2 btn-block"
+                            onClick={() => signUp({
+                                name: this.state.name,
+                                mobile: this.state.mobile,
+                                password: this.state.password
+                            })}
                         >
                             Signup
                     </button>
                     </div>
-                </form>
+                </div>
             </>
         )
     }
 }
 
+const mapStateToProps = state =>{
+    return {
+        userCheck:state.userCheck,
+        registered:state.registered
+    }
+}
+
+const mapDispatchToProps = dispatch => {
+    return {
+        signUp: props => dispatch(signUp(props))
+    }
+}
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(Signup);

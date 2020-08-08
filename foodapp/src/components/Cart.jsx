@@ -76,6 +76,7 @@ export function Cart(props) {
                         ))}
                     </TableBody>
                 </Table>
+                <button>Check out</button>
             </TableContainer>
                 </div>:
                 <h1>

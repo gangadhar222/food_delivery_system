@@ -1,4 +1,4 @@
-import { ADD_TO_CART, REMOVE_FROM_CART } from './actionTypes.js'
+import { ADD_TO_CART, REMOVE_FROM_CART,LOG_IN,SIGN_UP,REGISTER } from './actionTypes.js'
 
 
 export const addItem = payload => ({
@@ -8,6 +8,22 @@ export const addItem = payload => ({
 
 export const removeItem = payload => ({
     type: REMOVE_FROM_CART,
+    payload
+})
+
+export const login = payload => ({
+    type: LOG_IN,
+    payload
+})
+
+export const signUp = payload => ({
+    type: SIGN_UP,
+    payload
+})
+
+
+export const register = payload => ({
+    type: REGISTER,
     payload
 })
 

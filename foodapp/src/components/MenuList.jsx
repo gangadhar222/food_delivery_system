@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { addItem } from '../redux/actions.js'
 import { makeStyles } from '@material-ui/core/styles';
@@ -72,7 +71,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        addItem: props=> dispatch(addItem(props))
+        addItem: payload=> dispatch(addItem(payload))
     }
 }
 
