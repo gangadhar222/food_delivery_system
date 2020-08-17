@@ -1,4 +1,4 @@
-import { ADD_TO_CART, REMOVE_FROM_CART, LOG_IN, SIGN_UP} from './actionTypes.js'
+import { ADD_TO_CART, REMOVE_FROM_CART, LOG_IN, SIGN_UP,LOGOUT} from './actionTypes.js'
 import {saveData,loadData} from './localStorage.js'
 
 const initState = {
@@ -386,11 +386,11 @@ const initState = {
             id: 10
         }
     ],
-    userCheck: false,
+    userCheck: loadData('userCheck')||false,
     registered:false,
-    userExist:false,
+    userExist:loadData('userExist')||false,
     wrongDetails:false,
-    presentUser:''
+    presentUser:loadData('presentUser')||false
 }
 
 const reducer = (state = initState, { type, payload }) => {
@@ -414,6 +414,8 @@ const reducer = (state = initState, { type, payload }) => {
         case LOG_IN:
             let loggedIn = state.registeredUsers.find(user=>user.name == payload.name && user.password == payload.password)
             if(loggedIn!==undefined){
+                saveData('userExist',true)
+                saveData('presentUser',loggedIn.name)
                 return {
                     ...state,
                     userExist:true,
@@ -441,6 +443,9 @@ const reducer = (state = initState, { type, payload }) => {
                 ...state,
                 userCheck:true
             }
+            case LOGOUT:
+                saveData('userExist',false)
+                saveData('presentUser',null)
         default:
             return state
     }

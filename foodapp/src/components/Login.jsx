@@ -25,7 +25,7 @@ export class Login extends Component {
             return <Redirect to="/" />
         }
         return (
-            <div className="container mt-5">
+            <div className="container mt-5" style={{width:'50%'}}>
                 <h3 className="text-center">Login</h3>
                 <div className="form-row">
                     <div className="form-group col-md-6">

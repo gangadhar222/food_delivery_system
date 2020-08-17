@@ -26,7 +26,7 @@ export class Signup extends Component {
             return <Redirect to="/login" />
         }
         return (
-            <>
+            <div className="container" style={{width:'33%'}}>
                 <h1 className="text-center p-3">Signup</h1>
                 <div className="container">
                     <div className="form-group">
@@ -69,7 +69,7 @@ export class Signup extends Component {
                     </button>
                     </div>
                 </div>
-            </>
+            </div>
         )
     }
 }

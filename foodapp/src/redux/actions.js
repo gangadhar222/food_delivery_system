@@ -1,4 +1,4 @@
-import { ADD_TO_CART, REMOVE_FROM_CART,LOG_IN,SIGN_UP } from './actionTypes.js'
+import { ADD_TO_CART, REMOVE_FROM_CART,LOG_IN,SIGN_UP,LOGOUT } from './actionTypes.js'
 
 
 export const addItem = payload => ({
@@ -18,6 +18,11 @@ export const login = payload => ({
 
 export const signUp = payload => ({
     type: SIGN_UP,
+    payload
+})
+
+export const logOut = payload => ({
+    type: LOGOUT,
     payload
 })
 
