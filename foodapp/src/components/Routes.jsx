@@ -10,7 +10,7 @@ import AddToCart from './AddToCart.jsx'
     return (
       <Switch>
           <Route  exact path="/" render={(props) =><Home {...props}/>}></Route>
-          <Route path="/login" render={(props) =><Login {...props}/>}></Route>
+          <Route exact path="/login" render={(props) =><Login {...props}/>}></Route>
           <Route path="/cart" render={(props) =><Cart {...props}/>}></Route>
           <Route path="/signup" render={(props) =><Signup {...props}/>}></Route>
           <Route exact path="/:id" render={(props) =><Menu {...props}/>}></Route>

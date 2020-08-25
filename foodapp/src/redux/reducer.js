@@ -1,17 +1,24 @@
-import { ADD_TO_CART, REMOVE_FROM_CART, LOG_IN, SIGN_UP,LOGOUT} from './actionTypes.js'
-import {saveData,loadData} from './localStorage.js'
+import {
+    ADD_TO_CART,
+    REMOVE_FROM_CART,
+    LOG_IN,
+    SIGN_UP,
+    LOGOUT
+} from './actionTypes.js'
+import {
+    saveData,
+    loadData
+} from './localStorage.js'
 
 const initState = {
     cartItems: [],
-    registeredUsers:loadData('users')|| [],
-    restaurantArray: [
-        {
+    registeredUsers: loadData('users') || [],
+    restaurantArray: [{
             name: "The Only Place",
             rating: 4.3,
             Address: "13, Museum Road, Behind Post Office, Bengaluru",
             url: "https://lh3.googleusercontent.com/vkuUei0_ox4nTdd51Z6AZKiJBmIrcIQgaWj_MSOGBs6RN1ASCQ0CqmIws8eX7puNY_pmv6t2y0V-czDEISXEY30uR-M=w1000",
-            Menu: [
-                {
+            Menu: [{
                     item: "Chicken Biryani",
                     id: 11,
                     price: 300,
@@ -48,8 +55,7 @@ const initState = {
             rating: 4.2,
             Address: "13, Museum Road, Behind Post Office, Bengaluru",
             url: "https://lh3.googleusercontent.com/Ic7F69PP8FmvR30ruKy9PdWCXrppKxgRpIuETrxljVHS6HnBxZtzmzso3NDC_aamKy1okOprkBYO-cY0qcaRNisMkRQ=w1000",
-            Menu: [
-                {
+            Menu: [{
                     item: "Chicken Biryani",
                     id: 21,
                     price: 300,
@@ -86,8 +92,7 @@ const initState = {
             rating: 4.3,
             Address: "13, Museum Road, Behind Post Office, Bengaluru",
             url: "https://lh3.googleusercontent.com/T4jvwfJCobV-TfBJVTqnuXaYJE15U9M5g7f1U91nbAtXdz0DzS-Xz25WuJHolXZTvZ4He00Cugu7GOzNFcphfzalMkU=w1000",
-            Menu: [
-                {
+            Menu: [{
                     item: "Chicken Biryani",
                     price: 300,
                     id: 31,
@@ -124,8 +129,7 @@ const initState = {
             rating: 4.3,
             Address: "13, Museum Road, Behind Post Office, Bengaluru",
             url: "https://lh3.googleusercontent.com/mCK05A2JFmLAJk3r5XmuDhJGvQ355v7ZEo8ePY2ZDJE1Y-O-GKPF3LuPSXbu22mYoodwZNpEpIRS3qndodDFYS-nig=w1000",
-            Menu: [
-                {
+            Menu: [{
                     item: "Chicken Biryani",
                     price: 300,
                     id: 41,
@@ -162,8 +166,7 @@ const initState = {
             rating: 4.3,
             Address: "13, Museum Road, Behind Post Office, Bengaluru",
             url: "https://lh3.googleusercontent.com/6DGQM6mRN93NF0H6eNGvSuTPb_dnAtW7PpNE9A7QIFaBQP9zs-HlREhgelCc_TSZ7BG6fXz0tqlYyQxub20lzGfe-hI=w1000",
-            Menu: [
-                {
+            Menu: [{
                     item: "Chicken Biryani",
                     price: 300,
                     id: 51,
@@ -200,8 +203,7 @@ const initState = {
             rating: 4.3,
             Address: "13, Museum Road, Behind Post Office, Bengaluru",
             url: "https://lh3.googleusercontent.com/DisB3OLqBSCOaDKKeGf1YK6azwNqv2rOytXfIgvoSlDPU_VjPZWZYAyVMsKMITTKfIrFf8dRuJWCYKt9R8NTFQhjnLTX=w1000",
-            Menu: [
-                {
+            Menu: [{
                     item: "Chicken Biryani",
                     price: 300,
                     id: 61,
@@ -238,8 +240,7 @@ const initState = {
             rating: 4.3,
             Address: "13, Museum Road, Behind Post Office, Bengaluru",
             url: "https://lh3.googleusercontent.com/LWN0iVsho7sC8JS7Y0CWYkh8jbFyAT24F4gyu0z0kfN9VYCWNdwIbd7DQ1iHmgHT-z2Nhho8sJZdNDi5lCgj6dUB9Cw=w1000",
-            Menu: [
-                {
+            Menu: [{
                     item: "Chicken Biryani",
                     price: 300,
                     id: 71,
@@ -276,8 +277,7 @@ const initState = {
             rating: 4.3,
             Address: "13, Museum Road, Behind Post Office, Bengaluru",
             url: "https://lh3.googleusercontent.com/hi3vNe1attPpFOYHnimv3uviWbw08cA4iQYfwOfctMVjyCutiE4IHNa3OAIkhnI28NJOgW4_yWdVPieABAH6DmEN3AOv=w1000",
-            Menu: [
-                {
+            Menu: [{
                     item: "Chicken Biryani",
                     price: 300,
                     id: 81,
@@ -314,8 +314,7 @@ const initState = {
             rating: 4.3,
             Address: "13, Museum Road, Behind Post Office, Bengaluru",
             url: "https://lh3.googleusercontent.com/48NtOIDOJ7vwSwtrsxe9Pbi_L_EYt_aDhbQo8CGkq-IwPy42P7knYF9BB792aP8NkSuqWPk81SDbLeGTgMDpqHOzxHkd=w1000",
-            Menu: [
-                {
+            Menu: [{
                     item: "Chicken Biryani",
                     price: 300,
                     id: 91,
@@ -352,8 +351,7 @@ const initState = {
             rating: 4.3,
             Address: "13, Museum Road, Behind Post Office, Bengaluru",
             url: "https://lh3.googleusercontent.com/REVfct6C9fnjnsfIriKr2fIVKfEk5NISc_gvVVCdMbZn6t8B5dcp90QjqolNgtLacegNWZGIlemczmLkF5TxxlbVCjI=w1000",
-            Menu: [
-                {
+            Menu: [{
                     item: "Chicken Biryani",
                     price: 300,
                     id: 101,
@@ -386,68 +384,88 @@ const initState = {
             id: 10
         }
     ],
-    userCheck: loadData('userCheck')||false,
-    registered:false,
-    userExist:loadData('userExist')||false,
-    wrongDetails:false,
-    presentUser:loadData('presentUser')||false
+    userCheck: loadData('userCheck') || false,
+    registered: false,
+    userExist: loadData('userExist') || false,
+    wrongDetails: false,
+    presentUser: loadData('presentUser') || false
 }
 
-const reducer = (state = initState, { type, payload }) => {
+const reducer = (state = initState, {
+    type,
+    payload
+}) => {
     switch (type) {
         case ADD_TO_CART:
+            console.log(state.cartItems)
             let id = payload.id.toString().split('').map(Number)[0]
             let restaurant = state.restaurantArray.find(item => item.id === id)
             let item = restaurant.Menu.find(item => item.id === payload.id)
+            let flag = false
+            let itemInCart = state.cartItems.map(cartItem => {
+                if(cartItem.id === item.id){
+                    console.log('hi',cartItem)
+                    flag = true
+                    let newItem = {...item,quantity:cartItem.quantity+1}
+                    return newItem
+                }
+                return item
+            })
+           if(flag){
+               return {
+                   ...state,
+                   cartItems:itemInCart
+               }
+           }
             let cartItem = {
-                name: item.item,
-                price: item.price,
-                quantity: 1,
-                id: payload.id
+               ...item,
+               quantity:1
             }
             return {
                 ...state,
-                cartItems: [...state.cartItems, cartItem]
+                cartItems: [...state.cartItems,cartItem]
             }
-        case REMOVE_FROM_CART:
-            return { ...state }
-        case LOG_IN:
-            let loggedIn = state.registeredUsers.find(user=>user.name == payload.name && user.password == payload.password)
-            if(loggedIn!==undefined){
-                saveData('userExist',true)
-                saveData('presentUser',loggedIn.name)
+            case REMOVE_FROM_CART:
                 return {
-                    ...state,
-                    userExist:true,
-                    presentUser:loggedIn.name
+                    ...state
                 }
-            }   
-            return {
-                 ...state,
-                 userExist:false,
-                 wrongDetails:true
-                 }
-        case SIGN_UP:
-            let user = state.registeredUsers.find(item => item.name === payload.name)
-            if (user === undefined) {
-                let data = [...state.registeredUsers,payload]
-                saveData('users',data)
-                return {
-                    ...state,
-                    registeredUsers: data,
-                    userCheck:false,
-                    registered:true
-                }
-            }
-            return {
-                ...state,
-                userCheck:true
-            }
-            case LOGOUT:
-                saveData('userExist',false)
-                saveData('presentUser',null)
-        default:
-            return state
+                case LOG_IN:
+                    let loggedIn = state.registeredUsers.find(user => user.name == payload.name && user.password == payload.password)
+                    if (loggedIn !== undefined) {
+                        saveData('userExist', true)
+                        saveData('presentUser', loggedIn.name)
+                        return {
+                            ...state,
+                            userExist: true,
+                            presentUser: loggedIn.name
+                        }
+                    }
+                    return {
+                        ...state,
+                        userExist: false,
+                            wrongDetails: true
+                    }
+                    case SIGN_UP:
+                        let user = state.registeredUsers.find(item => item.name === payload.name)
+                        if (user === undefined) {
+                            let data = [...state.registeredUsers, payload]
+                            saveData('users', data)
+                            return {
+                                ...state,
+                                registeredUsers: data,
+                                userCheck: false,
+                                registered: true
+                            }
+                        }
+                        return {
+                            ...state,
+                            userCheck: true
+                        }
+                        case LOGOUT:
+                            saveData('userExist', false)
+                            saveData('presentUser', null)
+                        default:
+                            return state
     }
 }
 

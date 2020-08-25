@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { makeStyles } from "@material-ui/core/styles";
 import AppBar from "@material-ui/core/AppBar";
@@ -6,7 +6,7 @@ import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
 import { connect } from "react-redux";
-import {logOut} from '../redux/actions'
+import { logOut } from "../redux/actions";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -21,20 +21,25 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 function Navbar(props) {
+  let initial = false;
   const classes = useStyles();
-  const { userExist, presentUser ,logOut} = props;
-  console.log(userExist, presentUser,logOut);
+  const { userExist, presentUser, logOut } = props;
+  const [state, setState] = useState(initial);
+  function logOutHandler() {
+      logOut()
+      setState(true);
+  }
   let component;
   if (presentUser) {
     component = (
       <>
         <h4>Hi!{presentUser}</h4>
-        <Button onClick={()=>logOut()}>
+        <Button onClick={() => logOutHandler()}>
           <Typography variant="h6"> Logout</Typography>
         </Button>
       </>
     );
-  } else { 
+  } else {
     component = (
       <>
         <Button>
@@ -86,10 +91,10 @@ const mapStatetoProps = (state) => {
   };
 };
 
-const mapDispatchToProps = dispatch=>{
+const mapDispatchToProps = (dispatch) => {
   return {
-    logOut : ()=>dispatch(logOut())
-  }
-}
+    logOut: () => dispatch(logOut()),
+  };
+};
 
-export default connect(mapStatetoProps,mapDispatchToProps)(Navbar);
+export default connect(mapStatetoProps, mapDispatchToProps)(Navbar);
