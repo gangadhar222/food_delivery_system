@@ -82,7 +82,7 @@ export function Cart(props) {
                       </button>
                     </StyledTableCell>
                     <StyledTableCell align="right">
-                      {item.price}
+                      {Number(item.price)*Number(item.quantity)}
                     </StyledTableCell>
                   </StyledTableRow>
                 ))}

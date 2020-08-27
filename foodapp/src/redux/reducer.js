@@ -397,33 +397,28 @@ const reducer = (state = initState, {
 }) => {
     switch (type) {
         case ADD_TO_CART:
-            console.log(state.cartItems)
             let id = payload.id.toString().split('').map(Number)[0]
             let restaurant = state.restaurantArray.find(item => item.id === id)
             let item = restaurant.Menu.find(item => item.id === payload.id)
+            let arr = [...state.cartItems]
             let flag = false
-            let itemInCart = state.cartItems.map(cartItem => {
-                if(cartItem.id === item.id){
-                    console.log('hi',cartItem)
+            for (let i = 0; i < arr.length; i++) {
+                if (arr[i].id == payload.id) {
+                    console.log(arr[i])
                     flag = true
-                    let newItem = {...item,quantity:cartItem.quantity+1}
-                    return newItem
+                    arr[i].quantity++
+                    break
                 }
-                return item
-            })
-           if(flag){
-               return {
-                   ...state,
-                   cartItems:itemInCart
-               }
-           }
-            let cartItem = {
-               ...item,
-               quantity:1
+            }
+            if (flag) {
+                return {
+                    ...state,
+                    cartItems: arr
+                }
             }
             return {
                 ...state,
-                cartItems: [...state.cartItems,cartItem]
+                cartItems: [...arr, { ...item, quantity: 1 }]
             }
             case REMOVE_FROM_CART:
                 return {
